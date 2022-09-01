@@ -4,7 +4,7 @@ from .models import EV_Car
 from .permissions import IsOwnerOrReadOnly
 
 
-class EVCarList(generics.ListAPIView):
+class EVCarList(generics.ListCreateAPIView):
     permission_classes = (IsOwnerOrReadOnly,)
     queryset = EV_Car.objects.all()
     serializer_class = EVCarSerializer
